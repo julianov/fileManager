@@ -1,4 +1,4 @@
-package jaodev.stopsmoking;
+package jaodev.fileManager;
 
 import android.content.Context;
 
@@ -35,14 +35,14 @@ public class fileManager {
     }
 
     private boolean delete(){
-        File file = new File("documento.txt");
+        File file = new File(filename);
         return file.delete();
     }
 
-    private boolean writeDataToString(Context cont,String data, String nombre_archivo) throws FileNotFoundException {
+    private boolean writeDataToString(Context cont,String data) throws FileNotFoundException {
         try {
 
-            FileOutputStream fos = cont.openFileOutput(nombre_archivo, MODE_PRIVATE);
+            FileOutputStream fos = cont.openFileOutput(filename, MODE_PRIVATE);
             OutputStreamWriter osw = new OutputStreamWriter(fos);
             osw.write(data);
             osw.flush();
@@ -55,9 +55,9 @@ public class fileManager {
         }
     }
 
-    private String readDataFromString(Context cont,String nombre_archivo) {
+    private String readDataFromString(Context cont) {
         try {
-            FileInputStream fis = cont.openFileInput(nombre_archivo);
+            FileInputStream fis = cont.openFileInput(filename);
             InputStreamReader isr = new InputStreamReader(fis);
             char[] inputBuffer = new char[100];
             String cadena = "";
