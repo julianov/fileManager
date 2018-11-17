@@ -17,8 +17,8 @@ public class fileManager {
     String filename;
 
     public fileManager(){
-
     }
+    
     public fileManager(String filename){
         this.filename=filename;
     }
@@ -26,6 +26,7 @@ public class fileManager {
     private void  set_name(String filename){
         this.filename=filename;
     }
+    
     private boolean if_exists(){
         File file = new File(filename);
         if (file.exists() && file.isFile())
