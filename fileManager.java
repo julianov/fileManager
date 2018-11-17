@@ -39,7 +39,7 @@ public class fileManager {
         return file.delete();
     }
 
-    private boolean writeDataToString(Context cont,String data) throws FileNotFoundException {
+    private boolean writeDataToFile(Context cont,String data) throws FileNotFoundException {
         try {
 
             FileOutputStream fos = cont.openFileOutput(filename, MODE_PRIVATE);
@@ -55,7 +55,7 @@ public class fileManager {
         }
     }
 
-    private String readDataFromString(Context cont) {
+    private String readDataFromFile(Context cont) {
         try {
             FileInputStream fis = cont.openFileInput(filename);
             InputStreamReader isr = new InputStreamReader(fis);
