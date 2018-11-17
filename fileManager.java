@@ -42,7 +42,6 @@ public class fileManager {
 
     private boolean writeDataToFile(Context cont,String data) throws FileNotFoundException {
         try {
-
             FileOutputStream fos = cont.openFileOutput(filename, MODE_PRIVATE);
             OutputStreamWriter osw = new OutputStreamWriter(fos);
             osw.write(data);
